@@ -1,29 +1,27 @@
-import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
 import siteMetadata from "@/data/siteMetadata";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
+import Link from "./Link";
 
 
 const Header = () => {
   return (
-    <header className="flex justify-between">
-      <div>
+    <header className="flex justify-between py-10">
+      <div className="w-full">
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
-            <div className="mr-3">
               <Image
                 src="/Taylors.png"
                 width={200}
                 height={70}
                 className="xs:block"
                 alt="Taylor's Cleaning and Restoration Logo"
-              />        
-            </div>
+              />
           </div>
         </Link>
       </div>
-      <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
+      <div className="flex w-full items-center space-x-4 leading-5 sm:space-x-6">
         {headerNavLinks
           .filter((link) => link.href !== '/')
           .map((link) => (
